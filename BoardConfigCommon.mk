@@ -30,5 +30,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 
 # Board
 TARGET_BOARD_PLATFORM := tegra
+TARGET_NO_BOOTLOADER := true
 
 include device/nvidia/tegra-common/BoardConfigTegra.mk
