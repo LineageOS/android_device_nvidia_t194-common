@@ -1,0 +1,6 @@
+[
+ {
+   "repository": "android_device_nvidia_tegra-common",
+   "target_path": "device/nvidia/tegra-common"
+ }
+]
