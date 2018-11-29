@@ -12,10 +12,12 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter $(TARGET_TEGRA_VERSION), t194),)
+ifneq ($(TARGET_TEGRA_VARIANT),)
+ifeq ($(TARGET_TEGRA_VERSION), t194)
 
 LOCAL_PATH := $(call my-dir)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+endif
 endif
