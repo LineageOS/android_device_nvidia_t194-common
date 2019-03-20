@@ -18,6 +18,7 @@ TARGET_TEGRA_VERSION := t194
 
 PRODUCT_PACKAGES += \
     init.t19x.rc \
-    init.t19x_common.rc
+    init.t19x_common.rc \
+    ueventd.t194ref.rc
 
 $(call inherit-product, device/nvidia/tegra-common/tegra.mk)
