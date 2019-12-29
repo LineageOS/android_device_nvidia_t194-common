@@ -1,0 +1,68 @@
+import /vendor/etc/init/hw/init.t19x_common.rc
+
+on boot
+# Sensor permissions
+    chown system system /sys/class/sensors/light/device/amb_clear
+
+# Tegra CEC permissions
+     chown system system /sys/devices/3960000.tegra_cec/cec_logical_addr_config
+     chmod 0660 /sys/devices/3960000.tegra_cec/cec_logical_addr_config
+
+# TCP divisor for traffic throttling
+    chown system system /sys/module/tcp_output/parameters/tcp_window_divisor
+
+# pwm-fan
+    chown system system /sys/devices/pwm-fan/state_cap
+    chmod 0664 /sys/devices/pwm-fan/state_cap
+    chown system system /sys/devices/pwm-fan/pwm_state_map
+    chmod 0664 /sys/devices/pwm-fan/pwm_state_map
+    chown system system /sys/devices/pwm-fan/pwm_cap
+    chmod 0664 /sys/devices/pwm-fan/pwm_cap
+    chown system system /sys/devices/pwm-fan/cur_pwm
+    chmod 0444 /sys/devices/pwm-fan/cur_pwm
+    chown system system /sys/devices/pwm-fan/pwm_rpm_table
+    chmod 0444 /sys/devices/pwm-fan/pwm_rpm_table
+    chown system system /sys/devices/pwm-fan/rpm_measured
+    chmod 0444 /sys/devices/pwm-fan/rpm_measured
+    chown system system /sys/devices/pwm-fan/step_time
+    chmod 0644 /sys/devices/pwm-fan/step_time
+    chown system system /sys/devices/pwm-fan/tach_enable
+    chmod 0644 /sys/devices/pwm-fan/tach_enable
+    chown system system /sys/devices/pwm-fan/target_pwm
+    chmod 0644 /sys/devices/pwm-fan/target_pwm
+    chown system system /sys/devices/pwm-fan/temp_control
+    chmod 0644 /sys/devices/pwm-fan/temp_control
+    chown system system /sys/devices/pwm-fan/fan_profile
+    chmod 0644 /sys/devices/pwm-fan/fan_profile
+
+# thermal-fan-est
+    chown system system /sys/devices/thermal-fan-est/fan_profile
+    chmod 0644 /sys/devices/thermal-fan-est/fan_profile
+    chown system system /sys/devices/thermal-fan-est/sleep_mode
+    chmod 0644 /sys/devices/thermal-fan-est/sleep_mode
+
+    chown system system /sys/bus/usb/drivers/usb/unbind
+    chmod 0644 /sys/bus/usb/drivers/usb/unbind
+    chown system system /sys/bus/usb/drivers/usb/bind
+    chmod 0644 /sys/bus/usb/drivers/usb/bind
+
+# override cpuset cpus to 0-5
+    write /dev/cpuset/foreground/cpus 0-5
+    write /dev/cpuset/foreground/boost/cpus 0-5
+    write /dev/cpuset/background/cpus 0-5
+    write /dev/cpuset/system-background/cpus 0-5
+    write /dev/cpuset/top-app/cpus 0-5
+
+# CMU
+    chown system system /sys/devices/13e10000.host1x/tegradc.0/cmu_enable
+    chown system system /sys/devices/13e10000.host1x/tegradc.1/cmu_enable
+
+on property:vendor.log.tag.TegraHDMICEC="V"
+    exec - system system -- /vendor/bin/cecutil --enable-rx-snoop
+
+on property:vendor.log.tag.TegraHDMICEC=""
+    exec - system system -- /vendor/bin/cecutil --disable-rx-snoop
+
+on post-fs-data
+     #create folder for storing hal data dumps
+     mkdir /data/vendor/audiohal 0771 audioserver audioserver
