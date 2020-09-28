@@ -32,4 +32,8 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_BOARD_PLATFORM := tegra
 TARGET_NO_BOOTLOADER := true
 
+# Sepolicy
+BOARD_SEPOLICY_DIRS += \
+    device/nvidia/t186-common/sepolicy/upstream
+
 include device/nvidia/tegra-common/BoardConfigTegra.mk
