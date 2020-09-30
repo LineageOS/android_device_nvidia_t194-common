@@ -16,7 +16,6 @@ allow init cache_file:dir mounton;
 allow init configfs:dir write;
 allow init kernel:system module_request;
 allow init storage_file:dir mounton;
-allow init sysfs:dir write;
 allow init tmpfs:lnk_file create;
 
 allow init configfs:dir add_name;
