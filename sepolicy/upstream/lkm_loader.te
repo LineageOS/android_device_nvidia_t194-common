@@ -35,6 +35,6 @@ allow lkm_loader self:capability { sys_module sys_nice };
 allow lkm_loader proc_bcmdhd_pcie:file {open read};
 allow lkm_loader sysfs_bcmdhd_pcie:file {open read};
 allow lkm_loader kmsg_device:chr_file { w_file_perms };
-allow lkm_loader proc_brcmfmac_pcie:file r_file_perms;
+allow lkm_loader proc_brcmfmac_pcie:file r_file_perms_no_ioctl;
 allow lkm_loader sysfs_brcmfmac_pcie:file r_file_perms;
 
