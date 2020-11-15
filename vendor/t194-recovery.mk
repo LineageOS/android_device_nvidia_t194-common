@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +11,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-TARGET_TEGRA_VERSION  := t194
-TARGET_TEGRA_KEYSTORE ?= nvkeystore
-TARGET_TEGRA_GPU      ?= nvgpu
+T194_FIRMWARE_PATH := vendor/nvidia/t194/firmware
 
-# System properties
-include $(LOCAL_PATH)/system_prop.mk
-
-PRODUCT_PACKAGES += \
-    init.t19x.rc \
-    init.t19x_common.rc \
-    init.tlk.rc \
-    ueventd.t194ref.rc
-
-include device/nvidia/tegra-common/tegra.mk
+# Firmware
+PRODUCT_COPY_FILES += \
+    $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:recovery/root/system/etc/firmware/tegra19x_xusb_firmware
