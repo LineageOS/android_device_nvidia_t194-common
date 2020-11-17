@@ -1,0 +1,22 @@
+# Firmware
+l4t-t194	drivers/lib/firmware/gv11b/acr_ucode.bin		t194/firmware/gv11b/acr_ucode.bin
+l4t-t194	drivers/lib/firmware/gv11b/fecs.bin			t194/firmware/gv11b/fecs.bin
+l4t-t194	drivers/lib/firmware/gv11b/fecs_sig.bin			t194/firmware/gv11b/fecs_sig.bin
+l4t-t194	drivers/lib/firmware/gv11b/gpccs.bin			t194/firmware/gv11b/gpccs.bin
+l4t-t194	drivers/lib/firmware/gv11b/gpccs_sig.bin		t194/firmware/gv11b/gpccs_sig.bin
+l4t-t194	drivers/lib/firmware/gv11b/gpmu_ucode.bin		t194/firmware/gv11b/gpmu_ucode.bin
+l4t-t194	drivers/lib/firmware/gv11b/gpmu_ucode_desc.bin		t194/firmware/gv11b/gpmu_ucode_desc.bin
+l4t-t194	drivers/lib/firmware/gv11b/gpmu_ucode_image.bin		t194/firmware/gv11b/gpmu_ucode_image.bin
+l4t-t194	drivers/lib/firmware/gv11b/NETA_img.bin			t194/firmware/gv11b/NETA_img.bin
+l4t-t194	drivers/lib/firmware/gv11b/NETB_img.bin			t194/firmware/gv11b/NETB_img.bin
+l4t-t194	drivers/lib/firmware/gv11b/NETC_img.bin			t194/firmware/gv11b/NETC_img.bin
+l4t-t194	drivers/lib/firmware/gv11b/NETD_img.bin			t194/firmware/gv11b/NETD_img.bin
+l4t-t194	drivers/lib/firmware/gv11b/pmu_bl.bin			t194/firmware/gv11b/pmu_bl.bin
+l4t-t194	drivers/lib/firmware/gv11b/pmu_sig.bin			t194/firmware/gv11b/pmu_sig.bin
+l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvdec040_ns.fw	t194/firmware/tegra19x/nvhost_nvdec040_ns.fw
+l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvdla010.fw	t194/firmware/tegra19x/nvhost_nvdla010.fw
+l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvenc070.fw	t194/firmware/tegra19x/nvhost_nvenc070.fw
+l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvjpg012.fw	t194/firmware/tegra19x/nvhost_nvjpg012.fw
+l4t-t194	drivers/lib/firmware/tegra19x/nvhost_pva010.fw		t194/firmware/tegra19x/nvhost_pva010.fw
+l4t-t194	drivers/lib/firmware/tegra19x/nvhost_vic042.fw		t194/firmware/tegra19x/nvhost_vic042.fw
+l4t-t194	drivers/lib/firmware/tegra19x_xusb_firmware		t194/firmware/xusb/tegra19x_xusb_firmware
