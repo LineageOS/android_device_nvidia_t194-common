@@ -26,6 +26,7 @@
 /dev/ttyACM*    0660    radio   system
 /dev/ttyACM2    0660    media   system
 /dev/ttyGS*     0660    radio   system
+/dev/rtc1       0640    system  system
 /dev/nvhdcp0    0666    system  system
 /dev/nvhdcp1    0660    system  system
 /dev/nvhost-vi         0660   media  camera
@@ -46,9 +47,9 @@
 /dev/nvhost-ctrl       0666   root   root
 /dev/nvhost-as-gpu     0666   root   root
 /dev/nvhost-ctrl-gpu   0666   root   root
-/dev/nvhost-dbg-gpu    0666   root   root
+/dev/nvhost-dbg-gpu    0660   root   root
 /dev/nvhost-tsg-gpu    0666   root   root
-/dev/nvhost-prof-gpu   0666   root   root
+/dev/nvhost-prof-gpu   0660   root   root
 /dev/tlk_device        0660   system drmrpc
 /dev/trusty-ipc-dev0   0660   system drmrpc
 /dev/block/mmcblk0rpmb 0600   system drmrpc
@@ -78,7 +79,8 @@
 /dev/quadd	0660	shell	shell
 /dev/quadd_auth	0660	system	system
 /sys/devices/virtual/input/input*	enabled	0660	system	system
-/dev/hidraw*    0660    system  system
+/dev/hidraw*    0666    system  system
+/dev/ozwpan     0666    system system
 /dev/input/event*       0660    system  input
 /dev/gps	0664	system	system
 /sys/power/sysedp/consumers/icemdm state 0660 radio system
@@ -97,18 +99,20 @@
 /sys/devices/system/cpu/cpu* cpufreq/scaling_setspeed 0664 system system
 /sys/devices/system/cpu/cpu* cpufreq/scaling_available_frequencies 0444 system system
 /sys/devices/system/cpu/cpu* cpufreq/cpuinfo_cur_freq 0444 system system
-# gk20a nodes
-/sys/devices/13e10000.host1x 17000000.gv11b/freq_request 0664 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/user 0664 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/devfreq/17000000.gv11b/cur_freq 0444 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/load 0444 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/counters_reset 0444 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/slcg_enable 0664 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/elcg_enable 0664 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/elpg_enable 0664 system system
-/sys/devices/13e10000.host1x 17000000.gv11b/blcg_enable 0664 system system
-/sys/devices/13e10000.host1x 15200000.nvdisplay/enable 0664 system system
-/sys/devices/13e10000.host1x 15210000.nvdisplay/enable 0664 system system
+# gv11b nodes
+/sys/devices/platform/host1x 17000000.gv11b/freq_request 0664 system system
+/sys/devices/platform/host1x 17000000.gv11b/user 0664 system system
+/sys/devices/platform/host1x 17000000.gv11b/load 0444 system system
+/sys/devices/platform/host1x 17000000.gv11b/counters_reset 0444 system system
+/sys/devices/platform/host1x 17000000.gv11b/slcg_enable 0664 system system
+/sys/devices/platform/host1x 17000000.gv11b/elcg_enable 0664 system system
+/sys/devices/platform/host1x 17000000.gv11b/elpg_enable 0664 system system
+/sys/devices/platform/host1x 17000000.gv11b/blcg_enable 0664 system system
+/sys/devices/platform/host1x 15200000.nvdisplay/enable 0664 system system
+/sys/devices/platform/host1x 15210000.nvdisplay/enable 0664 system system
+# mmc card
+/sys/devices/sdhci-tegra.0/mmc_host/mmc2/mmc2* ios_timing 0664	system	system
+/sys/devices/sdhci-tegra.0/mmc_host/mmc2/mmc2* error_stats 0664	system	system
 # LED nodes
 /sys/devices/platform/tegra-xhci/*	brightness	0660	system	system
 /sys/devices/platform/tegra-xhci/*	brightness2	0660	system	system
@@ -134,19 +138,6 @@
 /sys/bus/scsi/devices/*	power/control	0644	system	system
 /sys/bus/scsi/devices/*	power/autosuspend_delay_ms	0644	system	system
 
-# pwm-fan
-/sys/devices/platform/pwm-fan state_cap 0664 system system
-/sys/devices/platform/pwm-fan pwm_state_map 0664 system system
-/sys/devices/platform/pwm-fan pwm_cap 0664 system system
-/sys/devices/platform/pwm-fan cur_pwm 0444 system system
-/sys/devices/platform/pwm-fan pwm_rpm_table 0444 system system
-/sys/devices/platform/pwm-fan rpm_measured 0444 system system
-/sys/devices/platform/pwm-fan step_time 0644 system system
-/sys/devices/platform/pwm-fan tach_enable 0644 system system
-/sys/devices/platform/pwm-fan target_pwm 0644 system system
-/sys/devices/platform/pwm-fan temp_control 0644 system system
-
-
 # sensors
 /dev/iio:device*									0660	system	system
 
@@ -161,101 +152,6 @@
 /sys/devices/platform/nvs_dsm*		buffer/length				0660	system	system
 /sys/devices/platform/nvs_dsm*		scan_elements/in_timestamp_en		0660	system	system
 /sys/devices/platform/nvs_dsm*		scan_elements/in_dsm_en			0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	enable					0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	buffer/enable				0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	buffer/length				0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_timestamp_en		0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_accel_x_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_accel_y_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_accel_z_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_accel_status_en 	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_accel_flush				0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_accel_batch_period			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_accel_batch_timeout			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_accel_x_offset			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_accel_y_offset			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_accel_z_offset			0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_x_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_y_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_z_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_x_uncalib_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_y_uncalib_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_z_uncalib_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_x_bias_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_y_bias_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_z_bias_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_anglvel_status_en 	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_anglvel_flush			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_anglvel_batch_period			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_anglvel_batch_timeout		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_anglvel_x_offset			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_anglvel_y_offset			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_anglvel_z_offset			0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_motion_en		0660	system  system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_geomagnrot_x_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_geomagnrot_y_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_geomagnrot_z_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_geomagnrot_w_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_geomagnrot_cos_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_geomagnrot_flush			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_geomagnrot_batch_period		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_geomagnrot_batch_timeout		0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_orientation_x_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_orientation_y_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_orientation_z_en 	0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_orientation_flush			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_orientation_batch_period		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_orientation_batch_timeout		0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_x_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_y_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_z_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_x_uncalib_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_y_uncalib_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_z_uncalib_en	0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_x_bias_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_y_bias_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_z_bias_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_magn_status_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_magn_flush				0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_magn_batch_period			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_magn_batch_timeout			0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_pressure_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_pressure_flush			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_pressure_batch_period		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_pressure_batch_timeout		0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_temp_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_temp_flush				0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_temp_batch_period			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_temp_batch_timeout			0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_illuminance_en		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_illuminance_flush			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_illuminance_batch_period		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_illuminance_batch_timeout		0660	system	system
-
-/sys/devices/3210000.i2c/i2c-0/0-00*	scan_elements/in_proximity_en		0660	system  system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_proximity_flush			0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_proximity_batch_period		0660	system	system
-/sys/devices/3210000.i2c/i2c-0/0-00*	in_proximity_batch_timeout		0660	system	system
-
-/sys/devices/3270000.i2c/i2c-1/1-00*	enable					0660	system	system
-/sys/devices/3270000.i2c/i2c-1/1-00*	buffer/enable				0660	system	system
-/sys/devices/3270000.i2c/i2c-1/1-00*	buffer/length				0660	system	system
-/sys/devices/3270000.i2c/i2c-1/1-00*	scan_elements/in_timestamp_en		0660	system	system
-
-/sys/devices/3270000.i2c/i2c-1/1-00*	scan_elements/in_proximity_en		0660	system  system
-/sys/devices/3270000.i2c/i2c-1/1-00*	in_proximity_flush			0660	system	system
-/sys/devices/3270000.i2c/i2c-1/1-00*	in_proximity_batch_period		0660	system	system
-/sys/devices/3270000.i2c/i2c-1/1-00*	in_proximity_batch_timeout		0660	system	system
 
 /sys/devices/platform/tegra-xhci/usb*	enable							0660	system	system
 /sys/devices/platform/tegra-xhci/usb*	buffer/enable					0660	system	system
@@ -320,19 +216,11 @@
 
 #Factory Reset Protection
 /dev/block/platform/sdhci-tegra.3/by-name/RP2		0660	system	system
+/dev/block/platform/sdhci-tegra.3/by-name/RP6		0660	system	system
 
 #Blake touchpad node
 /sys/devices/platform/ozwpan/*	mode		0660	system	system
 /sys/devices/platform/tegra-xhci/*	mode		0660	system	system
-
-#sharp touch
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 input/input0/enabled		0660	system	system
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 touch/report_mode		0660	system	system
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 touch/slowscan_enable		0660	system	system
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 touch/version			0660	system	system
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 touch/wakeup_enable		0660	system	system
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 touch/log			0664    system  system
-/sys/devices/3230000.spi/spi_master/spi3/spi3.0 touch/version			0664    system  system
 
 #Move usb camera node to camera dir
 subsystem video4linux
@@ -343,15 +231,25 @@ subsystem video4linux
 /dev/block/platform/sdhci-tegra.3/by-name/RP2		0660	system	system
 /dev/block/platform/tegra-sata.0/by-name/RP2		0660    system  system
 
-#pepper hid nodes
+#pepper & friday hid nodes
 /sys/devices/virtual/misc/uhid/0005:0955:7213* timeout 0660    system  system
+/sys/devices/virtual/misc/uhid/0005:0955:7217* timeout 0660    system  system
 
 # HDMI power node
 /sys/class/graphics/fb0*	blank	0664  system system
 
 # USB vbus nodes
-/sys/class/regulator/regulator.27*	state  0664  system system
-/sys/class/regulator/regulator.28*	state  0664  system system
+/sys/devices/regulators/regulators:regulator@14/regulator* state 0664  system system
+/sys/devices/regulators/regulators:regulator@15/regulator* state 0664  system system
+
+# USB extcon nodes
+/sys/devices/extcon/extcon:virtual_id/extcon/extcon* state 0664 system system
 
 #Change dvb node owner&group
 /dev/dvb*	0660	system	net_bind_service
+
+# sysfs properties
+/sys/devices/system/cpu*   online   0664  system system
+
+# vdd-pre-reg regulator node
+/sys/class/regulator/regulator.5/microvolts	0664 system system
