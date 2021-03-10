@@ -108,9 +108,6 @@
 # platform tnspec
 /sys/firmware/devicetree/base/chosen/plugin-manager/tnspec(/.*)?	u:object_r:sysfs_tnspec:s0
 
-# cpuset parameter
-/vendor/bin/cpuset.sh             u:object_r:cpuset_exec:s0
-
 # Input device sysfs
 /sys/devices/gpio-keys/input/input0(/.*)?	u:object_r:sysfs_input_dev:s0
 /sys/devices/3610000.xhci/usb1/1-4/1-4:1.0/input/input.*/enabled	u:object_r:sysfs_input_dev:s0
