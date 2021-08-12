@@ -20,3 +20,17 @@ l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvjpg012.fw	t194/firmware/tegra19x
 l4t-t194	drivers/lib/firmware/tegra19x/nvhost_pva010.fw		t194/firmware/tegra19x/nvhost_pva010.fw
 l4t-t194	drivers/lib/firmware/tegra19x/nvhost_vic042.fw		t194/firmware/tegra19x/nvhost_vic042.fw
 l4t-t194	drivers/lib/firmware/tegra19x_xusb_firmware		t194/firmware/xusb/tegra19x_xusb_firmware
+
+# Bootloader
+l4t-t194	Linux_for_Tegra/bootloader/adsp-fw.bin			t194/bootloader/adsp-fw.bin
+l4t-t194	Linux_for_Tegra/bootloader/bpmp_t194.bin		t194/bootloader/bpmp_t194.bin
+l4t-t194	Linux_for_Tegra/bootloader/camera-rtcpu-rce.img		t194/bootloader/camera-rtcpu-rce.img
+l4t-t194	Linux_for_Tegra/bootloader/mb1_t194_prod.bin		t194/bootloader/mb1_t194_prod.bin
+l4t-t194	Linux_for_Tegra/bootloader/mce_c10_prod_cr.bin		t194/bootloader/mce_c10_prod_cr.bin
+l4t-t194	Linux_for_Tegra/bootloader/mts_c10_prod_cr.bin		t194/bootloader/mts_c10_prod_cr.bin
+l4t-t194	Linux_for_Tegra/bootloader/nvtboot_t194.bin		t194/bootloader/nvtboot_t194.bin
+l4t-t194	Linux_for_Tegra/bootloader/nvtboot_cpu_t194.bin		t194/bootloader/nvtboot_cpu_t194.bin
+l4t-t194	Linux_for_Tegra/bootloader/preboot_c10_prod_cr.bin	t194/bootloader/preboot_c10_prod_cr.bin
+l4t-t194	Linux_for_Tegra/bootloader/spe_t194.bin			t194/bootloader/spe_t194.bin
+l4t-t194	Linux_for_Tegra/bootloader/tos-mon-only_t194.img	t194/bootloader/tos-mon-only_t194.img
+l4t-t194	Linux_for_Tegra/bootloader/warmboot_t194_prod.bin	t194/bootloader/warmboot_t194_prod.bin
