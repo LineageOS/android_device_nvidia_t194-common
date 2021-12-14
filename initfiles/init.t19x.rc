@@ -12,6 +12,17 @@ on boot
     chown system system /sys/module/tcp_output/parameters/tcp_window_divisor
 
 # pwm-fan
+    chown system system /sys/devices/pwm-fan/fan_profile
+    chmod 0644 /sys/devices/pwm-fan/fan_profile
+
+# thermal-fan-est
+    chown system system /sys/devices/thermal_fan_est/fan_profile
+    chmod 0644 /sys/devices/thermal_fan_est/fan_profile
+
+# Enable tachometer
+    write /sys/devices/pwm-fan/tach_enabled 1
+
+# pwm-fan
     chown system system /sys/devices/pwm-fan/state_cap
     chmod 0664 /sys/devices/pwm-fan/state_cap
     chown system system /sys/devices/pwm-fan/pwm_state_map

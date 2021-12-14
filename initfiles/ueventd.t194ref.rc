@@ -50,6 +50,13 @@
 /dev/nvhost-dbg-gpu    0660   root   root
 /dev/nvhost-tsg-gpu    0666   root   root
 /dev/nvhost-prof-gpu   0660   root   root
+/dev/nvgpu/igpu0/power 0666   root   root
+/dev/nvgpu/igpu0/as    0666   root   root
+/dev/nvgpu/igpu0/channel 0666   root   root
+/dev/nvgpu/igpu0/ctrl  0666   root   root
+/dev/nvgpu/igpu0/dbg   0666   root   root
+/dev/nvgpu/igpu0/prof  0666   root   root
+/dev/nvgpu/igpu0/tsg   0666   root   root
 /dev/tlk_device        0660   system drmrpc
 /dev/trusty-ipc-dev0   0660   system drmrpc
 /dev/block/mmcblk0rpmb 0600   system drmrpc
@@ -80,7 +87,7 @@
 /dev/quadd_auth	0660	system	system
 /sys/devices/virtual/input/input*	enabled	0660	system	system
 /dev/hidraw*    0666    system  system
-/dev/ozwpan     0666    system system
+/dev/ozwpan     0666    system  system
 /dev/input/event*       0660    system  input
 /dev/gps	0664	system	system
 /sys/power/sysedp/consumers/icemdm state 0660 radio system
@@ -137,6 +144,19 @@
 /sys/bus/usb/devices/*	power/wakeup	0644	system	system
 /sys/bus/scsi/devices/*	power/control	0644	system	system
 /sys/bus/scsi/devices/*	power/autosuspend_delay_ms	0644	system	system
+
+# pwm-fan
+/sys/devices/platform/pwm-fan state_cap 0664 system system
+/sys/devices/platform/pwm-fan pwm_state_map 0664 system system
+/sys/devices/platform/pwm-fan pwm_cap 0664 system system
+/sys/devices/platform/pwm-fan cur_pwm 0444 system system
+/sys/devices/platform/pwm-fan pwm_rpm_table 0444 system system
+/sys/devices/platform/pwm-fan rpm_measured 0444 system system
+/sys/devices/platform/pwm-fan step_time 0644 system system
+/sys/devices/platform/pwm-fan tach_enable 0644 system system
+/sys/devices/platform/pwm-fan target_pwm 0644 system system
+/sys/devices/platform/pwm-fan temp_control 0644 system system
+
 
 # sensors
 /dev/iio:device*									0660	system	system
@@ -216,7 +236,6 @@
 
 #Factory Reset Protection
 /dev/block/platform/sdhci-tegra.3/by-name/RP2		0660	system	system
-/dev/block/platform/sdhci-tegra.3/by-name/RP6		0660	system	system
 
 #Blake touchpad node
 /sys/devices/platform/ozwpan/*	mode		0660	system	system
@@ -226,6 +245,11 @@
 subsystem video4linux
 	devname uevent_devname
 	dirname /dev/camera
+
+#Move nvgpu nodes to nvgpu dir
+subsystem nvidia-gpu-v2
+	devname uevent_devpath
+	dirname /dev/nvgpu/igpu0
 
 #Factory Reset Protection
 /dev/block/platform/sdhci-tegra.3/by-name/RP2		0660	system	system

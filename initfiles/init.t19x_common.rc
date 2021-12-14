@@ -41,12 +41,6 @@ on boot
 # OGL_RECLAIM_BUFFER_SIZE_THRESHOLD (16 MB)
     setprop ro.vendor.tegra.0x3e9c5c 16777216
 
-# OGL_RECLAIM_BUFFER_COUNT_THRESHOLD
-    setprop ro.vendor.tegra.0x3e0c5c 4
-
-# OGL_RECLAIM_MEMORY_AGGRESSIVELY
-    setprop ro.vendor.tegra.0x3e9c02 1
-
 # Controls the percentage of memory the driver will cache. (0.5%)
     setprop ro.vendor.tegra.OGL_VidHeapReuseRatio 5
 
