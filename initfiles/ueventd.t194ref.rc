@@ -96,6 +96,7 @@
 /dev/ttyTHS3	0660	bluetooth	bluetooth
 /sys/devices/platform/tegra_cec cec_logical_addr_config	0660	system	system
 /dev/tegra_cec	0660	system	system
+/dev/cec0	0660	system	system
 # pmqos
 /dev/constraint_cpu_freq 0660 system system
 /dev/constraint_gpu_freq 0660 system system
