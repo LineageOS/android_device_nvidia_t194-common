@@ -18,8 +18,8 @@ TARGET_TEGRA_VERSION  := t194
 TARGET_TEGRA_KEYSTORE ?= nvkeystore
 TARGET_TEGRA_GPU      ?= nvgpu
 
-# System properties
-include device/nvidia/t194-common/system_prop.mk
+# Properties
+include device/nvidia/t194-common/properties.mk
 
 PRODUCT_PACKAGES += \
     init.t19x.rc \
