@@ -251,6 +251,9 @@ subsystem video4linux
 subsystem nvidia-gpu-v2
 	devname uevent_devpath
 	dirname /dev/nvgpu/igpu0
+subsystem nvidia-gpu-v2-power
+	devname uevent_devpath
+	dirname /dev/nvgpu/igpu0
 
 #Factory Reset Protection
 /dev/block/platform/sdhci-tegra.3/by-name/RP2		0660	system	system
