@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
 
 # GPU firmware
 PRODUCT_PACKAGES += \
-    acr_ucode \
+    acr_ucode_dbg \
+    acr_ucode_prod \
     fecs \
     fecs_sig \
     gpccs \

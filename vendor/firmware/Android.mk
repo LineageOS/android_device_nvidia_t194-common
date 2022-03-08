@@ -31,8 +31,18 @@ LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE               := acr_ucode
-LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/gv11b/acr_ucode.bin
+LOCAL_MODULE               := acr_ucode_dbg
+LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/gv11b/acr_ucode_dbg.bin
+LOCAL_MODULE_SUFFIX        := .bin
+LOCAL_MODULE_CLASS         := ETC
+LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/gv11b
+LOCAL_MODULE_TAGS          := optional
+LOCAL_MODULE_OWNER         := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE               := acr_ucode_prod
+LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/gv11b/acr_ucode_prod.bin
 LOCAL_MODULE_SUFFIX        := .bin
 LOCAL_MODULE_CLASS         := ETC
 LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/gv11b

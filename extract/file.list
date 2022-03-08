@@ -1,5 +1,6 @@
 # Firmware
-l4t-t194	drivers/lib/firmware/gv11b/acr_ucode.bin		t194/firmware/gv11b/acr_ucode.bin
+l4t-t194	drivers/lib/firmware/gv11b/acr_ucode_dbg.bin		t194/firmware/gv11b/acr_ucode_dbg.bin
+l4t-t194	drivers/lib/firmware/gv11b/acr_ucode_prod.bin		t194/firmware/gv11b/acr_ucode_prod.bin
 l4t-t194	drivers/lib/firmware/gv11b/fecs.bin			t194/firmware/gv11b/fecs.bin
 l4t-t194	drivers/lib/firmware/gv11b/fecs_sig.bin			t194/firmware/gv11b/fecs_sig.bin
 l4t-t194	drivers/lib/firmware/gv11b/gpccs.bin			t194/firmware/gv11b/gpccs.bin
