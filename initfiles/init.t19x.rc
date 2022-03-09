@@ -57,6 +57,10 @@ on boot
     chown system system /sys/bus/usb/drivers/usb/bind
     chmod 0644 /sys/bus/usb/drivers/usb/bind
 
+    # Nvpmodel
+    chown system system /sys/devices/gpu.0/power/control
+    chmod 0664 /sys/devices/gpu.0/power/control
+
 # override cpuset cpus to 0-5
     write /dev/cpuset/foreground/cpus 0-5
     write /dev/cpuset/foreground/mems 0
