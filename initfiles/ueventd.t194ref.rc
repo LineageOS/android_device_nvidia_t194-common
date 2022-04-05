@@ -125,14 +125,14 @@
 /sys/devices/platform/tegra-xhci/*	brightness2	0660	system	system
 /sys/devices/platform/tegra-xhci/*	state	0660	system	system
 /sys/devices/platform/tegra-xhci/*	state2	0660	system	system
-/sys/bus/usb/devices/2-3:1.1/state	0660	system	system
-/sys/bus/usb/devices/2-3:1.1/brightness	0660	system	system
-/sys/bus/usb/devices/2-3:1.1/brightness2	0660	system	system
-/sys/bus/usb/devices/2-3:1.1/state2	0660	system	system
-/sys/class/nvshieldled/2-3:1.1/brightness	0660	system	system
-/sys/class/nvshieldled/2-3:1.1/brightness2	0660	system	system
-/sys/class/nvshieldled/2-3:1.1/state	0660	system	system
-/sys/class/nvshieldled/2-3:1.1/state2	0660	system	system
+/sys/bus/usb/devices/2-3:1.1	state	0660	system	system
+/sys/bus/usb/devices/2-3:1.1	brightness	0660	system	system
+/sys/bus/usb/devices/2-3:1.1	brightness2	0660	system	system
+/sys/bus/usb/devices/2-3:1.1	state2	0660	system	system
+/sys/class/nvshieldled/2-3:1.1	brightness	0660	system	system
+/sys/class/nvshieldled/2-3:1.1	brightness2	0660	system	system
+/sys/class/nvshieldled/2-3:1.1	state	0660	system	system
+/sys/class/nvshieldled/2-3:1.1	state2	0660	system	system
 /dev/cy8c-led-boot	0660	system	system
 /sys/devices/platform/tegra21-i2c.0/i2c-0/0-0009/leds/led_lightbar boot_mode 0664 system system
 /sys/devices/platform/tegra21-i2c.0/i2c-0/0-0009/leds/led_lightbar version 0664 system system
