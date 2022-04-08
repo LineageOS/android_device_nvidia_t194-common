@@ -18,7 +18,7 @@ $(call inherit-product, $(LOCAL_PATH)/t194-recovery.mk)
 
 # Xusb firmware
 PRODUCT_PACKAGES += \
-    tegra19x_xusb_firmware
+    xusb.bin
 
 # GPU firmware
 PRODUCT_PACKAGES += \
@@ -44,5 +44,5 @@ PRODUCT_PACKAGES += \
     nvhost_nvdla010 \
     nvhost_nvenc070 \
     nvhost_nvjpg012 \
-    nvhost_pva010 \
-    nvhost_vic042
+    nvhost_vic042 \
+    nvpva_010

@@ -17,15 +17,15 @@ T194_FIRMWARE_PATH := ../../../../../vendor/nvidia/t194/firmware
 
 T19X_XUSB_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/tegra19x_xusb_firmware
 $(T19X_XUSB_SYMLINK): $(LOCAL_INSTALLED_MODULE)
-	$(hide) ln -sf ./xusb/$(notdir $@) $@
+	$(hide) ln -sf ./nvidia/tegra194/xusb.bin $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(T19X_XUSB_SYMLINK)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE               := tegra19x_xusb_firmware
+LOCAL_MODULE               := xusb.bin
 LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware
 LOCAL_MODULE_CLASS         := ETC
-LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/xusb
+LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/nvidia/tegra194
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
@@ -192,10 +192,10 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE               := nvhost_nvdla010
-LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/tegra19x/nvhost_nvdla010.fw
+LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/nvhost_nvdla010.fw
 LOCAL_MODULE_SUFFIX        := .fw
 LOCAL_MODULE_CLASS         := ETC
-LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/tegra19x
+LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
@@ -221,21 +221,21 @@ LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE               := nvhost_pva010
-LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/tegra19x/nvhost_pva010.fw
+LOCAL_MODULE               := nvpva_010
+LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/nvpva_010.fw
 LOCAL_MODULE_SUFFIX        := .fw
 LOCAL_MODULE_CLASS         := ETC
-LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/tegra19x
+LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE               := nvhost_vic042
-LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/tegra19x/nvhost_vic042.fw
+LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/nvhost_vic042.fw
 LOCAL_MODULE_SUFFIX        := .fw
 LOCAL_MODULE_CLASS         := ETC
-LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/tegra19x
+LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
