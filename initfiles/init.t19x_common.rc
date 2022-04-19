@@ -45,7 +45,7 @@ on boot
     setprop ro.vendor.tegra.OGL_VidHeapReuseRatio 5
 
 # Thie yields each tegra wdt expiration to be at 45 secs and fourth expiration for reboot at 180 secs.
-service watchdogd /sbin/watchdogd 20 160
+service watchdogd /system/bin/watchdogd 20 160
     class core
     seclabel u:r:watchdogd:s0
 
