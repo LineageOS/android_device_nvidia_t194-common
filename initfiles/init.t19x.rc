@@ -20,7 +20,7 @@ on boot
     chmod 0644 /sys/devices/thermal_fan_est/fan_profile
 
 # Enable tachometer
-    write /sys/devices/pwm-fan/tach_enabled 1
+    write /sys/devices/pwm-fan/tach_enable 1
 
 # pwm-fan
     chown system system /sys/devices/pwm-fan/state_cap
