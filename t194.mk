@@ -15,7 +15,7 @@
 #
 
 TARGET_TEGRA_VERSION  := t194
-TARGET_TEGRA_KEYSTORE ?= nvkeystore
+TARGET_TEGRA_KEYSTORE ?= software
 TARGET_TEGRA_GPU      ?= nvgpu
 
 # Properties
