@@ -1,4 +1,4 @@
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2022 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,35 +14,6 @@
 
 LOCAL_PATH := device/nvidia/t194-common/vendor
 
-include $(LOCAL_PATH)/t194-recovery.mk
-
-# Xusb firmware
-PRODUCT_PACKAGES += \
-    xusb.bin
-
-# GPU firmware
-PRODUCT_PACKAGES += \
-    acr_ucode_dbg \
-    acr_ucode_prod \
-    fecs \
-    fecs_sig \
-    gpccs \
-    gpccs_sig \
-    gpmu_ucode \
-    gpmu_ucode_desc \
-    gpmu_ucode_image \
-    NETA_img \
-    NETB_img \
-    NETC_img \
-    NETD_img \
-    pmu_bl \
-    pmu_sig
-
-# General firmware
-PRODUCT_PACKAGES += \
-    nvhost_nvdec040_ns \
-    nvhost_nvdla010 \
-    nvhost_nvenc070 \
-    nvhost_nvjpg012 \
-    nvhost_vic042 \
-    nvpva_010
+ifneq ("$(wildcard $(LOCAL_PATH)/$(TARGET_TEGRA_FIRMWARE_BRANCH)/t194.mk)","")
+include $(LOCAL_PATH)/$(TARGET_TEGRA_FIRMWARE_BRANCH)/t194.mk
+endif

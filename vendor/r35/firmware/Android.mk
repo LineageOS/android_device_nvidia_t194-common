@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(TARGET_TEGRA_FIRMWARE_BRANCH),r35)
 LOCAL_PATH := $(call my-dir)
-T194_FIRMWARE_PATH := ../../../../../vendor/nvidia/t194/firmware
+T194_FIRMWARE_PATH := ../../../../../../vendor/nvidia/t194/r35/firmware
 
 include $(CLEAR_VARS)
 LOCAL_MODULE               := xusb.bin
@@ -235,3 +236,4 @@ LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
 include $(BUILD_PREBUILT)
+endif

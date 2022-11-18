@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-T194_FIRMWARE_PATH := vendor/nvidia/t194/firmware
+T194_FIRMWARE_PATH := vendor/nvidia/t194/r35/firmware
 
 # Firmware
 ifeq ($(TARGET_TEGRA_KERNEL),4.9)
