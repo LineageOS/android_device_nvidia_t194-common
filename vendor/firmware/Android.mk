@@ -15,12 +15,6 @@
 LOCAL_PATH := $(call my-dir)
 T194_FIRMWARE_PATH := ../../../../../vendor/nvidia/t194/firmware
 
-T19X_XUSB_SYMLINK := $(TARGET_OUT_VENDOR)/firmware/tegra19x_xusb_firmware
-$(T19X_XUSB_SYMLINK): $(LOCAL_INSTALLED_MODULE)
-	$(hide) ln -sf ./nvidia/tegra194/xusb.bin $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(T19X_XUSB_SYMLINK)
-
 include $(CLEAR_VARS)
 LOCAL_MODULE               := xusb.bin
 LOCAL_SRC_FILES            := $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware
@@ -28,6 +22,8 @@ LOCAL_MODULE_CLASS         := ETC
 LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/nvidia/tegra194
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
+LOCAL_POST_INSTALL_CMD     := \
+    ln -sf ./nvidia/tegra194/xusb.bin $(TARGET_OUT_VENDOR)/firmware/tegra19x_xusb_firmware
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
