@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1b8d48f2_59b9635a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 14048
+      },
+      "writtenOn": "2023-05-20T01:57:24Z",
+      "side": 1,
+      "message": "Verified building galen and verified that symlinks were in place.",
+      "revId": "57119dfa90cdb9e8330be8095a8c3c17b6d7af92",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
