@@ -14,7 +14,7 @@
 
 LOCAL_PATH := device/nvidia/t194-common/vendor
 
-$(call inherit-product, $(LOCAL_PATH)/t194-recovery.mk)
+include $(LOCAL_PATH)/t194-recovery.mk
 
 # Xusb firmware
 PRODUCT_PACKAGES += \
