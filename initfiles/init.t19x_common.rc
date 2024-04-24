@@ -1,9 +1,6 @@
 on init
     write /proc/sys/vm/legacy_va_layout 1
 
-# YUV420 supported
-    setprop persist.vendor.tegra.hdmi.yuv.enable 1
-
     start watchdogd
 
 on boot
