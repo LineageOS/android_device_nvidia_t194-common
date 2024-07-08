@@ -16,6 +16,8 @@ LOCAL_PATH := device/nvidia/t194-common/vendor/r35
 
 include $(LOCAL_PATH)/t194-recovery.mk
 
+PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+
 # Xusb firmware
 PRODUCT_PACKAGES += \
     xusb.bin

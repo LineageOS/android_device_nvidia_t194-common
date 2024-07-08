@@ -23,8 +23,7 @@ LOCAL_MODULE_CLASS         := ETC
 LOCAL_MODULE_PATH          := $(TARGET_OUT_VENDOR)/firmware/nvidia/tegra194
 LOCAL_MODULE_TAGS          := optional
 LOCAL_MODULE_OWNER         := nvidia
-LOCAL_POST_INSTALL_CMD     := \
-    ln -sf ./nvidia/tegra194/xusb.bin $(TARGET_OUT_VENDOR)/firmware/tegra19x_xusb_firmware
+LOCAL_REQUIRED_MODULES     := tegra19x_xusb_firmware_symlink
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

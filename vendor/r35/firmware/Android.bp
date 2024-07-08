@@ -1,0 +1,6 @@
+install_symlink {
+    name: "tegra19x_xusb_firmware_symlink",
+    vendor: true,
+    installed_location: "firmware/tegra19x_xusb_firmware",
+    symlink_target: "nvidia/tegra194/xusb.bin",
+}
