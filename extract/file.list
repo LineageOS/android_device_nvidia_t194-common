@@ -27,6 +27,7 @@ l4t-t194	bootloader/adsp-fw.bin				bootloader/
 l4t-t194	bootloader/BOOTAA64.efi				bootloader/
 l4t-t194	bootloader/bpmp_t194.bin			bootloader/
 l4t-t194	bootloader/camera-rtcpu-t194-rce.img		bootloader/
+l4t-t194	bootloader/eks_t194.img				bootloader/eks.img
 l4t-t194	bootloader/mb1_t194_prod.bin			bootloader/
 l4t-t194	bootloader/mce_c10_prod_cr.bin			bootloader/
 l4t-t194	bootloader/mts_c10_prod_cr.bin			bootloader/
