@@ -20,10 +20,13 @@ TARGET_TEGRA_FIRMWARE_BRANCH ?= r35
 # Properties
 include device/nvidia/t194-common/properties.mk
 
-PRODUCT_PACKAGES += \
-    init.t19x.rc \
-    init.t19x_common.rc \
-    init.tlk.rc \
-    ueventd.t194ref.rc
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += device/nvidia/t194-common
+
+PRODUCT_COPY_FILES += \
+    device/nvidia/t194-common/initfiles/init.t18x.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.t19x.rc \
+    device/nvidia/t194-common/initfiles/init.t18x_common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.t19x_common.rc \
+    device/nvidia/tegra-common/initfiles/init.tlk.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.tlk.rc \
+    device/nvidia/t194-common/initfiles/ueventd.t194ref.rc:$(TARGET_COPY_OUT_VENDOR)/etc/ueventd.rc
 
 include device/nvidia/tegra-common/tegra.mk
