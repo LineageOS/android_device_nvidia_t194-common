@@ -57,9 +57,9 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_KERNEL_VERSION),4.9)
 PRODUCT_COPY_FILES += \
     $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:recovery/root/lib/firmware/tegra19x_xusb_firmware \
-    $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:$(TARGET_COPY_OUT_RAMDISK)/lib/firmware/tegra19x_xusb_firmware
+    $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/tegra19x_xusb_firmware
 else
 PRODUCT_COPY_FILES += \
     $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:recovery/root/lib/firmware/nvidia/tegra194/xusb.bin \
-    $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:$(TARGET_COPY_OUT_RAMDISK)/lib/firmware/nvidia/tegra194/xusb.bin
+    $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/nvidia/tegra194/xusb.bin
 endif

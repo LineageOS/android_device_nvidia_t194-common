@@ -31,4 +31,4 @@ PRODUCT_COPY_FILES += \
 # Recovery / Boot Ramdisk
 PRODUCT_COPY_FILES += \
     $(T194_FIRMWARE_PATH)/nvidia/tegra194/xusb.bin:recovery/root/lib/firmware/nvidia/tegra194/xusb.bin \
-    $(T194_FIRMWARE_PATH)/nvidia/tegra194/xusb.bin:$(TARGET_COPY_OUT_RAMDISK)/lib/firmware/nvidia/tegra194/xusb.bin
+    $(T194_FIRMWARE_PATH)/nvidia/tegra194/xusb.bin:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/lib/firmware/nvidia/tegra194/xusb.bin
