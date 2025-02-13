@@ -12,8 +12,6 @@ on boot
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor schedutil
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor schedutil
     write /sys/devices/system/cpu/cpu5/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu6/cpufreq/scaling_governor schedutil
-    write /sys/devices/system/cpu/cpu7/cpufreq/scaling_governor schedutil
 
     chown system system /sys/module/input_cfboost/parameters/boost_freq
     chown system system /sys/module/input_cfboost/parameters/boost_gpu
