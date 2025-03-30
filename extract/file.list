@@ -1,3 +1,45 @@
+# R32
+# Firmware
+l4t-t186	drivers/lib/firmware/gv11b/acr_ucode_dbg.bin		firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/acr_ucode_prod.bin		firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/fecs.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/fecs_sig.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/gpccs.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/gpccs_sig.bin		firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/gpmu_ucode.bin		firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/gpmu_ucode_desc.bin		firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/gpmu_ucode_image.bin		firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/NETA_img.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/NETB_img.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/NETC_img.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/NETD_img.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/pmu_bl.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/gv11b/pmu_sig.bin			firmware/gv11b/
+l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvdec040_ns.fw	firmware/tegra19x/
+l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvenc070.fw	firmware/tegra19x/
+l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvjpg012.fw	firmware/tegra19x/
+l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvdla010.fw	firmware/
+l4t-t186	drivers/lib/firmware/tegra19x/nvhost_vic042.fw		firmware/
+l4t-t186	drivers/lib/firmware/tegra19x/nvhost_pva010.fw		firmware/nvpva_010.fw
+l4t-t186	drivers/lib/firmware/tegra19x_xusb_firmware		firmware/xusb/
+
+# Bootloader
+l4t-t186	bootloader/adsp-fw.bin				bootloader/
+l4t-t186	bootloader/bpmp_t194.bin			bootloader/
+l4t-t186	bootloader/camera-rtcpu-rce.img			bootloader/camera-rtcpu-t194-rce.img
+l4t-t186	bootloader/eks.img				bootloader/
+l4t-t186	bootloader/mb1_t194_prod.bin			bootloader/
+l4t-t186	bootloader/mce_c10_prod_cr.bin			bootloader/
+l4t-t186	bootloader/mts_c10_prod_cr.bin			bootloader/
+l4t-t186	bootloader/nvtboot_t194.bin			bootloader/
+l4t-t186	bootloader/nvtboot_applet_t194.bin		bootloader/
+l4t-t186	bootloader/nvtboot_recovery_t194.bin		bootloader/
+l4t-t186	bootloader/nvtboot_recovery_cpu_t194.bin	bootloader/
+l4t-t186	bootloader/preboot_c10_prod_cr.bin		bootloader/
+l4t-t186	bootloader/spe_t194.bin				bootloader/
+l4t-t186	bootloader/tos-mon-only_t194.img		bootloader/
+l4t-t186	bootloader/warmboot_t194_prod.bin		bootloader/
+
 # R35
 # Firmware
 l4t-t194	drivers/lib/firmware/gv11b/acr_ucode_dbg.bin		firmware/gv11b/
