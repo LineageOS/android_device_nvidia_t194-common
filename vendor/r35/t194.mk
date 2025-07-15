@@ -54,7 +54,7 @@ PRODUCT_PACKAGES += \
 
 
 # Recovery / Boot Ramdisk
-ifeq ($(TARGET_TEGRA_KERNEL),4.9)
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
 PRODUCT_COPY_FILES += \
     $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:recovery/root/lib/firmware/tegra19x_xusb_firmware \
     $(T194_FIRMWARE_PATH)/xusb/tegra19x_xusb_firmware:$(TARGET_COPY_OUT_RAMDISK)/lib/firmware/tegra19x_xusb_firmware
