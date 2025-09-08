@@ -12,18 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-T194_FIRMWARE_PATH := kernel/nvidia/linux-firmware
+T194_FIRMWARE_PATH := external/linux-firmware-mainline/firmware
 
 DOWNSTREAM_BRANCH    := r36
 T194_DOWNSTREAM_PATH := vendor/nvidia/t194/$(DOWNSTREAM_BRANCH)/firmware
+
+# Upstream firmware
+PRODUCT_PACKAGES += \
+    linux_firmware_nvidia-tegra194
 
 # General firmware
 PRODUCT_COPY_FILES += \
     $(T194_DOWNSTREAM_PATH)/tegra19x/nvhost_nvdec040_ns.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/nvidia/tegra194/nvdec.bin \
     $(T194_DOWNSTREAM_PATH)/tegra19x/nvhost_nvenc070.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/nvidia/tegra194/nvenc.bin \
-    $(T194_DOWNSTREAM_PATH)/tegra19x/nvhost_nvjpg012.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/nvidia/tegra194/nvjpg.bin \
-    $(T194_FIRMWARE_PATH)/nvidia/tegra194/vic.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/nvidia/tegra194/vic.bin \
-    $(T194_FIRMWARE_PATH)/nvidia/tegra194/xusb.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/nvidia/tegra194/xusb.bin
+    $(T194_DOWNSTREAM_PATH)/tegra19x/nvhost_nvjpg012.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/nvidia/tegra194/nvjpg.bin
 
 
 # Recovery / Boot Ramdisk
