@@ -43,6 +43,7 @@ on boot
 service watchdogd /system/bin/watchdogd 20 160
     class core
     seclabel u:r:watchdogd:s0
+    user root
 
 on property:sys.boot_completed=1
     # Disable uevents for Android USB state and VBUS extcon state while suspending.
