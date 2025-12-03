@@ -15,7 +15,7 @@
 #
 
 TARGET_TEGRA_VERSION         := t194
-TARGET_TEGRA_FIRMWARE_BRANCH ?= r35
+TARGET_TEGRA_FIRMWARE_BRANCH ?= linux-firmware
 
 # Properties
 include device/nvidia/t194-common/properties.mk

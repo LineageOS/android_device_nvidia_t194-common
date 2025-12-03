@@ -18,10 +18,6 @@ l4t-t186	drivers/lib/firmware/gv11b/pmu_sig.bin			firmware/gv11b/
 l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvdec040_ns.fw	firmware/tegra19x/
 l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvenc070.fw	firmware/tegra19x/
 l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvjpg012.fw	firmware/tegra19x/
-l4t-t186	drivers/lib/firmware/tegra19x/nvhost_nvdla010.fw	firmware/
-l4t-t186	drivers/lib/firmware/tegra19x/nvhost_vic042.fw		firmware/
-l4t-t186	drivers/lib/firmware/tegra19x/nvhost_pva010.fw		firmware/nvpva_010.fw
-l4t-t186	drivers/lib/firmware/tegra19x_xusb_firmware		firmware/xusb/
 
 # Bootloader
 l4t-t186	bootloader/adsp-fw.bin				bootloader/
@@ -60,10 +56,6 @@ l4t-t194	drivers/lib/firmware/gv11b/pmu_sig.bin			firmware/gv11b/
 l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvdec040_ns.fw	firmware/tegra19x/
 l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvenc070.fw	firmware/tegra19x/
 l4t-t194	drivers/lib/firmware/tegra19x/nvhost_nvjpg012.fw	firmware/tegra19x/
-l4t-t194	drivers/lib/firmware/nvhost_nvdla010.fw			firmware/
-l4t-t194	drivers/lib/firmware/nvhost_vic042.fw			firmware/
-l4t-t194	drivers/lib/firmware/nvpva_010.fw			firmware/
-l4t-t194	drivers/lib/firmware/nvidia/tegra194/xusb.bin		firmware/xusb/tegra19x_xusb_firmware
 
 # Bootloader
 l4t-t194	bootloader/adsp-fw.bin				bootloader/
@@ -87,21 +79,9 @@ l4t-t194	bootloader/warmboot_t194_prod.bin		bootloader/
 
 # R36
 # Firmware
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/acr_ucode_prod.bin	firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/fecs_sig.bin		firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/gpccs_sig.bin		firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/gpmu_ucode.bin	firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/gpmu_ucode_desc.bin	firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/gpmu_ucode_image.bin	firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/pmu_bl.bin		firmware/gv11b/
-l4t-t234	drivers/lib/firmware/nvidia/gv11b/pmu_sig.bin		firmware/gv11b/
 l4t-t234	drivers/lib/firmware/tegra19x/nvhost_nvdec040_ns.fw	firmware/tegra19x/
 l4t-t234	drivers/lib/firmware/tegra19x/nvhost_nvenc070.fw	firmware/tegra19x/
 l4t-t234	drivers/lib/firmware/tegra19x/nvhost_nvjpg012.fw	firmware/tegra19x/
-l4t-t234	drivers/lib/firmware/nvhost_nvdla010.fw			firmware/
-l4t-t234	drivers/lib/firmware/nvhost_vic042.fw			firmware/
-l4t-t234	drivers/lib/firmware/nvpva_010.fw			firmware/
-l4t-t234	drivers/lib/firmware/nvidia/tegra194/xusb.bin		firmware/xusb/tegra19x_xusb_firmware
 
 # Bootloader
 l4t-t234	bootloader/adsp-fw.bin				bootloader/
