@@ -1,0 +1,36 @@
+{
+    "Sensors":[
+        {
+            "Name":"cpu-thermal",
+            "Type":"CPU",
+            "Throttling":[
+                {
+                    "Type": "Hot",
+                    "Severe": 70,
+                    "Shutdown": 96
+                }
+            ]
+        },
+        {
+            "Name":"gpu-thermal",
+            "Type":"GPU",
+            "Throttling":[
+                {
+                    "Type": "Hot",
+                    "Shutdown": 99
+                }
+            ]
+        },
+        {
+            "Name":"aux-thermal",
+            "Type":"UNKNOWN"
+        }
+    ],
+    "CoolingDevices":[
+        {
+            "Name":"pwm-fan",
+            "Type":"FAN",
+            "Optional":true
+        }
+    ]
+}
